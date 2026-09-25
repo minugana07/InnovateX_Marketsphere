@@ -36,11 +36,35 @@ MARKETS = {
         },
 
         "gates": {
-            "Product classification confirmed": True,
-            "Authorization pathway confirmed": True,
-            "KYC / AML requirements satisfiable": True,
-            "Payment / settlement structure viable": True,
-            "Risk controls implementable": True
+            "Product classification confirmed": {
+                "status": True,
+                "critical": True,
+                "reason": "The proposed product structure can be mapped to the applicable Brazilian regulatory framework."
+            },
+
+            "Authorization pathway confirmed": {
+                "status": True,
+                "critical": True,
+                "reason": "A regulated local partner and appropriate authorization pathway have been identified."
+            },
+
+            "KYC / AML requirements satisfiable": {
+                "status": True,
+                "critical": True,
+                "reason": "KYC, identity matching, Travel Rule and related compliance requirements can be incorporated."
+            },
+
+            "Payment / settlement structure viable": {
+                "status": True,
+                "critical": True,
+                "reason": "Local payment infrastructure such as Pix provides a viable basis for the proposed settlement model."
+            },
+
+            "Risk controls implementable": {
+                "status": True,
+                "critical": True,
+                "reason": "Suitability, monitoring and product-level risk controls can be incorporated before launch."
+            }
         },
 
         "entry_approach": "Partner-led",
@@ -105,11 +129,35 @@ MARKETS = {
         },
 
         "gates": {
-            "Product classification confirmed": False,
-            "Authorization pathway confirmed": False,
-            "KYC / AML requirements satisfiable": True,
-            "Payment / settlement structure viable": True,
-            "Risk controls implementable": True
+            "Product classification confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "The regulatory classification of the proposed products still needs to be confirmed."
+            },
+
+            "Authorization pathway confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "The appropriate regulatory jurisdiction, licensing structure and permissions still need to be established."
+            },
+
+            "KYC / AML requirements satisfiable": {
+                "status": True,
+                "critical": True,
+                "reason": "KYC/AML and customer-protection requirements can be incorporated into the proposed model."
+            },
+
+            "Payment / settlement structure viable": {
+                "status": True,
+                "critical": True,
+                "reason": "Established payment infrastructure exists, subject to selecting the appropriate regulated structure."
+            },
+
+            "Risk controls implementable": {
+                "status": True,
+                "critical": True,
+                "reason": "Risk warnings, margin, leverage, liquidation and monitoring controls can be designed into the product."
+            }
         },
 
         "entry_approach": "Controlled pilot",
@@ -171,11 +219,35 @@ MARKETS = {
         },
 
         "gates": {
-            "Product classification confirmed": True,
-            "Authorization pathway confirmed": True,
-            "KYC / AML requirements satisfiable": True,
-            "Payment / settlement structure viable": True,
-            "Risk controls implementable": True
+            "Product classification confirmed": {
+                "status": True,
+                "critical": True,
+                "reason": "The Round 1 approach identifies an applicable regulated ODP/CASP framework for the proposed model."
+            },
+
+            "Authorization pathway confirmed": {
+                "status": True,
+                "critical": True,
+                "reason": "The proposed entry model uses an FSCA/ODP-compliant structure and regulated partner."
+            },
+
+            "KYC / AML requirements satisfiable": {
+                "status": True,
+                "critical": True,
+                "reason": "FICA and customer-verification requirements are incorporated into the proposed entry plan."
+            },
+
+            "Payment / settlement structure viable": {
+                "status": True,
+                "critical": True,
+                "reason": "A local banking and ZAR settlement structure is proposed to address the market's payment environment."
+            },
+
+            "Risk controls implementable": {
+                "status": True,
+                "critical": True,
+                "reason": "Hedging and exchange-control management are included in the proposed operating model."
+            }
         },
 
         "entry_approach": "Partner-led",
@@ -237,11 +309,35 @@ MARKETS = {
         },
 
         "gates": {
-            "Product classification confirmed": False,
-            "Authorization pathway confirmed": False,
-            "KYC / AML requirements satisfiable": True,
-            "Payment / settlement structure viable": True,
-            "Risk controls implementable": True
+            "Product classification confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "Stock-linked and perpetual products require product-by-product classification."
+            },
+
+            "Authorization pathway confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "The applicable MAS regulatory perimeter and local licensed structure still need to be established."
+            },
+
+            "KYC / AML requirements satisfiable": {
+                "status": True,
+                "critical": True,
+                "reason": "Singapore-specific KYC/AML requirements can be incorporated into the proposed model."
+            },
+
+            "Payment / settlement structure viable": {
+                "status": True,
+                "critical": True,
+                "reason": "Established payment and settlement infrastructure exists for an appropriately structured participant."
+            },
+
+            "Risk controls implementable": {
+                "status": True,
+                "critical": True,
+                "reason": "The proposed restricted MVP allows customer-protection and risk controls to be implemented before scaling."
+            }
         },
 
         "entry_approach": "Controlled pilot",
@@ -303,11 +399,35 @@ MARKETS = {
         },
 
         "gates": {
-            "Product classification confirmed": False,
-            "Authorization pathway confirmed": False,
-            "KYC / AML requirements satisfiable": True,
-            "Payment / settlement structure viable": True,
-            "Risk controls implementable": True
+            "Product classification confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "Each proposed product needs to be classified under the applicable Australian financial-product framework."
+            },
+
+            "Authorization pathway confirmed": {
+                "status": False,
+                "critical": True,
+                "reason": "The appropriate AFSL pathway or licensed local partner structure still needs to be established."
+            },
+
+            "KYC / AML requirements satisfiable": {
+                "status": True,
+                "critical": True,
+                "reason": "Customer eligibility, disclosure and compliance requirements can be incorporated into the proposed model."
+            },
+
+            "Payment / settlement structure viable": {
+                "status": True,
+                "critical": True,
+                "reason": "Australia has established payment and settlement infrastructure for appropriately structured participants."
+            },
+
+            "Risk controls implementable": {
+                "status": True,
+                "critical": True,
+                "reason": "Leverage, margin, disclosure and retail customer-protection controls can be incorporated."
+            }
         },
 
         "entry_approach": "Controlled pilot",
@@ -345,7 +465,13 @@ def calculate_score(dimensions):
 
 def determine_status(gates):
 
-    if not all(gates.values()):
+    critical_gates = [
+        gate
+        for gate in gates.values()
+        if gate["critical"]
+    ]
+
+    if not all(gate["status"] for gate in critical_gates):
         return "NEEDS WORK"
 
     return "READY"

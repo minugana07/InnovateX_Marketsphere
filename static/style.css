@@ -452,3 +452,92 @@ footer {
         text-align: left;
     }
 }
+
+/* =========================
+   LAUNCH GATES
+========================= */
+
+.launch-gates {
+    padding-top: 35px;
+}
+
+.gate-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #303030;
+}
+
+.gate-icon {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 800;
+}
+
+.gate-pass {
+    background: #d8ead8;
+    color: #245c2a;
+}
+
+.gate-pending {
+    background: #f0dfc2;
+    color: #80591f;
+}
+
+.gate-content {
+    flex: 1;
+}
+
+.gate-content strong {
+    font-size: 15px;
+}
+
+.gate-content p {
+    margin-top: 7px;
+
+    color: #999;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.gate-status {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    padding-top: 6px;
+
+    white-space: nowrap;
+}
+
+.status-ready {
+    color: #8fc294;
+}
+
+.status-pending {
+    color: #d5a35c;
+}
+
+@media (max-width: 700px) {
+
+    .gate-row {
+        flex-wrap: wrap;
+    }
+
+    .gate-status {
+        margin-left: 43px;
+    }
+}

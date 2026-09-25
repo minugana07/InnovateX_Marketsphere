@@ -73,6 +73,31 @@ function displayAssessment(data) {
                 </div>
             `).join("")}
         </div>
+
+        <div class="launch-gates">
+
+        <p class="section-label">LAUNCH GATES</p>
+
+        ${Object.entries(data.gates).map(([name, gate]) => `
+            <div class="gate-row">
+
+                <div class="gate-icon ${gate.status ? "gate-pass" : "gate-pending"}">
+                    ${gate.status ? "✓" : "!"}
+                </div>
+
+                <div class="gate-content">
+                    <strong>${name}</strong>
+                    <p>${gate.reason}</p>
+                </div>
+
+                <span class="gate-status ${gate.status ? "status-ready" : "status-pending"}">
+                    ${gate.status ? "SATISFIED" : "UNRESOLVED"}
+                </span>
+
+            </div>
+        `).join("")}
+
+    </div>
     `;
 
     const existingResult = document.querySelector(".assessment-result");
