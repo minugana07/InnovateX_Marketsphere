@@ -8,6 +8,29 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/assessment")
+def assessment_page():
+    return render_template("assessment.html")
+
+
+@app.route("/comparison")
+def comparison_page():
+    return render_template("comparison.html")
+
+
+@app.route("/strategy")
+def strategy_page():
+    return render_template("strategy.html")
+
+
+@app.route("/risks")
+def risks_page():
+    return render_template("risks.html")
+
+
+@app.route("/gemini")
+def gemini_page():
+    return render_template("gemini.html")
 
 @app.route("/assess", methods=["POST"])
 def assess():
