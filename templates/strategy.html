@@ -1,55 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <title>Entry Strategy | MochaTrade</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block title %}
+Entry Strategy | InnovateX
+{% endblock %}
 
-<body>
 
-    <nav class="navbar">
+{% block content %}
 
-        <div class="nav-container">
+<main class="page-container">
 
-            <a href="/" class="logo">
-                INNOVATEX
-            </a>
 
-            <div class="nav-links">
+    <section class="page-header">
 
-                <a href="/" class="nav-link">
-                    Home
-                </a>
+        <p class="section-label">
+            ENTRY STRATEGY
+        </p>
 
-                <a href="/assessment" class="nav-link">
-                    Market Assessment
-                </a>
+        <h1>
+            Turn assessment into action.
+        </h1>
 
-                <a href="/comparison" class="nav-link">
-                    Compare Markets
-                </a>
+        <p>
+            Identify the proposed entry approach and the
+            adaptations required before launch.
+        </p>
 
-                <a href="/strategy" class="nav-link">
-                    Entry Strategy
-                </a>
+    </section>
 
-                <a href="/risks" class="nav-link">
-                    Risks & Mitigations
-                </a>
+
+    <!-- =========================
+         ENTRY APPROACH
+    ========================== -->
+
+    <section class="strategy-hero">
+
+        <div>
+
+            <p class="section-label">
+                RECOMMENDED ENTRY APPROACH
+            </p>
+
+            <h2>
+                Partner-led entry
+            </h2>
+
+            <p>
+                Use an appropriately regulated local partner
+                to establish the required authorization,
+                operational and compliance structure.
+            </p>
+
+        </div>
+
+
+        <div class="strategy-badge">
+            PROPOSED APPROACH
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADJUSTMENTS
+    ========================== -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                COMPLIANCE ADJUSTMENTS
+            </p>
+
+            <h2>
+                What needs to change?
+            </h2>
+
+        </div>
+
+
+        <div class="adjustment-grid">
+
+
+            <div class="adjustment-card">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Regulatory structure
+                </h3>
+
+                <p>
+                    Confirm the appropriate local regulatory
+                    and authorization structure before launch.
+                </p>
+
+            </div>
+
+
+            <div class="adjustment-card">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Customer onboarding
+                </h3>
+
+                <p>
+                    Adapt KYC, AML, suitability and customer
+                    classification requirements to the market.
+                </p>
+
+            </div>
+
+
+            <div class="adjustment-card">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Product controls
+                </h3>
+
+                <p>
+                    Adapt product permissions, leverage,
+                    margin, disclosures and risk controls.
+                </p>
+
+            </div>
+
+
+            <div class="adjustment-card">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+                    Settlement
+                </h3>
+
+                <p>
+                    Establish a compliant local payment
+                    and settlement structure.
+                </p>
 
             </div>
 
         </div>
 
-    </nav>
+    </section>
 
-    <h1>Entry Strategy</h1>
-    <p>This is the Entry Strategy page.</p>
 
-</body>
-</html>
+    <!-- =========================
+         ENTRY PATHWAY
+    ========================== -->
+
+    <section class="pathway-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                ENTRY PATHWAY
+            </p>
+
+            <h2>
+                Regulation → Product → Pilot → Monitor → Scale
+            </h2>
+
+        </div>
+
+
+        <div class="pathway">
+
+            <div class="pathway-step">
+                <span>01</span>
+                <strong>Regulation</strong>
+                <p>Confirm the regulatory perimeter.</p>
+            </div>
+
+            <div class="pathway-step">
+                <span>02</span>
+                <strong>Product</strong>
+                <p>Adapt the product to local requirements.</p>
+            </div>
+
+            <div class="pathway-step">
+                <span>03</span>
+                <strong>Pilot</strong>
+                <p>Launch through a controlled MVP.</p>
+            </div>
+
+            <div class="pathway-step">
+                <span>04</span>
+                <strong>Monitor</strong>
+                <p>Track compliance, complaints and operations.</p>
+            </div>
+
+            <div class="pathway-step">
+                <span>05</span>
+                <strong>Scale</strong>
+                <p>Expand after launch gates are satisfied.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+{% endblock %}

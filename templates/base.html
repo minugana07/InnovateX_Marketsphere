@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        InnovateX
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <a href="/"
+               class="logo">
+
+                INNOVATEX
+
+            </a>
+
+
+            <div class="nav-links">
+
+
+                <a href="/"
+                   class="nav-link">
+
+                    Home
+
+                </a>
+
+
+                <a href="/assessment"
+                   class="nav-link">
+
+                    Market Assessment
+
+                </a>
+
+
+                <a href="/comparison"
+                   class="nav-link">
+
+                    Compare Markets
+
+                </a>
+
+
+                <a href="/strategy"
+                   class="nav-link">
+
+                    Entry Strategy
+
+                </a>
+
+
+                <a href="/risks"
+                   class="nav-link">
+
+                    Risks & Mitigations
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         PAGE CONTENT
+    ========================== -->
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+
+</html>

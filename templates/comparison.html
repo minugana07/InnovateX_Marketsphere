@@ -1,55 +1,308 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <title>Market Comparison | MochaTrade</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block title %}
+Compare Markets | InnovateX
+{% endblock %}
 
-<body>
 
-    <nav class="navbar">
+{% block content %}
 
-        <div class="nav-container">
+<main class="page-container">
 
-            <a href="/" class="logo">
-                INNOVATEX
-            </a>
 
-            <div class="nav-links">
+    <section class="page-header">
 
-                <a href="/" class="nav-link">
-                    Home
-                </a>
+        <p class="section-label">
+            MARKET COMPARISON
+        </p>
 
-                <a href="/assessment" class="nav-link">
-                    Market Assessment
-                </a>
+        <h1>
+            Compare regulatory complexity.
+        </h1>
 
-                <a href="/comparison" class="nav-link">
-                    Compare Markets
-                </a>
+        <p>
+            Review candidate markets across the same
+            regulatory dimensions used by the assessment engine.
+        </p>
 
-                <a href="/strategy" class="nav-link">
-                    Entry Strategy
-                </a>
+    </section>
 
-                <a href="/risks" class="nav-link">
-                    Risks & Mitigations
-                </a>
 
-            </div>
+    <!-- =========================
+         COMPARISON CONTROLS
+    ========================== -->
+
+    <section class="comparison-controls">
+
+        <div>
+
+            <label for="compare-market-one">
+                Market 01
+            </label>
+
+            <select id="compare-market-one">
+
+                <option value="brazil">
+                    Brazil
+                </option>
+
+                <option value="uae">
+                    United Arab Emirates
+                </option>
+
+                <option value="south_africa">
+                    South Africa
+                </option>
+
+                <option value="singapore">
+                    Singapore
+                </option>
+
+                <option value="australia">
+                    Australia
+                </option>
+
+            </select>
 
         </div>
 
-    </nav>
 
-    <h1>Market Comparison</h1>
-    <p>This is the Market Comparison page.</p>
+        <div>
 
-</body>
-</html>
+            <label for="compare-market-two">
+                Market 02
+            </label>
+
+            <select id="compare-market-two">
+
+                <option value="uae">
+                    United Arab Emirates
+                </option>
+
+                <option value="brazil">
+                    Brazil
+                </option>
+
+                <option value="south_africa">
+                    South Africa
+                </option>
+
+                <option value="singapore">
+                    Singapore
+                </option>
+
+                <option value="australia">
+                    Australia
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button class="primary-button comparison-button">
+            Compare
+            <span>→</span>
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         COMPARISON TABLE
+    ========================== -->
+
+    <section class="comparison-card">
+
+        <div class="comparison-title">
+
+            <p class="section-label">
+                REGULATORY BREAKDOWN
+            </p>
+
+            <h2>
+                Market comparison
+            </h2>
+
+        </div>
+
+
+        <div class="comparison-table-wrapper">
+
+            <table class="comparison-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Dimension
+                        </th>
+
+                        <th>
+                            Brazil
+                        </th>
+
+                        <th>
+                            UAE
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            Product & Derivatives
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                4 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Licensing
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                4 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            KYC / AML
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Capital Controls & FX
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                2 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Payments & Settlement
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                2 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                2 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Reporting & Compliance
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="table-score">
+                                3 / 5
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPARISON INSIGHT
+    ========================== -->
+
+    <section class="comparison-insight">
+
+        <p class="section-label">
+            DECISION CONTEXT
+        </p>
+
+        <h2>
+            Regulatory complexity is
+            dimension-specific.
+        </h2>
+
+        <p>
+            A market can have lower complexity in one
+            regulatory area while presenting greater
+            requirements in another. The comparison
+            engine keeps those dimensions visible instead
+            of reducing the decision to a single number.
+        </p>
+
+    </section>
+
+
+</main>
+
+{% endblock %}

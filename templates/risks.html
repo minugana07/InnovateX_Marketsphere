@@ -1,55 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <title>Risks & Mitigations | MochaTrade</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block title %}
+Risks & Mitigations | InnovateX
+{% endblock %}
 
-<body>
 
-    <nav class="navbar">
+{% block content %}
 
-        <div class="nav-container">
+<main class="page-container">
 
-            <a href="/" class="logo">
-                INNOVATEX
-            </a>
 
-            <div class="nav-links">
+    <section class="page-header">
 
-                <a href="/" class="nav-link">
-                    Home
-                </a>
+        <p class="section-label">
+            RISKS & MITIGATIONS
+        </p>
 
-                <a href="/assessment" class="nav-link">
-                    Market Assessment
-                </a>
+        <h1>
+            Know what can block entry.
+        </h1>
 
-                <a href="/comparison" class="nav-link">
-                    Compare Markets
-                </a>
+        <p>
+            Identify the regulatory and operational risks
+            associated with entering a candidate market,
+            alongside the proposed mitigation.
+        </p>
 
-                <a href="/strategy" class="nav-link">
-                    Entry Strategy
-                </a>
+    </section>
 
-                <a href="/risks" class="nav-link">
-                    Risks & Mitigations
-                </a>
 
+    <!-- =========================
+         RISK MATRIX
+    ========================== -->
+
+    <section class="risk-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                RISK REGISTER
+            </p>
+
+            <h2>
+                Key market-entry risks
+            </h2>
+
+        </div>
+
+
+        <div class="risk-list">
+
+
+            <div class="risk-card">
+
+                <div class="risk-number">
+                    01
+                </div>
+
+
+                <div class="risk-content">
+
+                    <span class="risk-category">
+                        REGULATORY
+                    </span>
+
+                    <h3>
+                        Product classification
+                    </h3>
+
+                    <p>
+                        The proposed product may fall within
+                        a regulated financial-product category
+                        requiring additional permissions.
+                    </p>
+
+                </div>
+
+
+                <div class="mitigation">
+
+                    <span>
+                        MITIGATION
+                    </span>
+
+                    <p>
+                        Confirm product classification before
+                        committing to launch.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-card">
+
+                <div class="risk-number">
+                    02
+                </div>
+
+
+                <div class="risk-content">
+
+                    <span class="risk-category">
+                        AUTHORIZATION
+                    </span>
+
+                    <h3>
+                        Licensing pathway
+                    </h3>
+
+                    <p>
+                        The required authorization structure
+                        may depend on the product, customer
+                        type and operating model.
+                    </p>
+
+                </div>
+
+
+                <div class="mitigation">
+
+                    <span>
+                        MITIGATION
+                    </span>
+
+                    <p>
+                        Establish the authorization pathway
+                        and identify a suitable regulated structure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-card">
+
+                <div class="risk-number">
+                    03
+                </div>
+
+
+                <div class="risk-content">
+
+                    <span class="risk-category">
+                        FX / CAPITAL
+                    </span>
+
+                    <h3>
+                        Cross-border transfer friction
+                    </h3>
+
+                    <p>
+                        Capital controls, exchange requirements
+                        or transfer processes can affect the
+                        operating model.
+                    </p>
+
+                </div>
+
+
+                <div class="mitigation">
+
+                    <span>
+                        MITIGATION
+                    </span>
+
+                    <p>
+                        Design the settlement and FX structure
+                        around the applicable local requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-card">
+
+                <div class="risk-number">
+                    04
+                </div>
+
+
+                <div class="risk-content">
+
+                    <span class="risk-category">
+                        OPERATIONS
+                    </span>
+
+                    <h3>
+                        Partner dependency
+                    </h3>
+
+                    <p>
+                        A partner-led model can create operational
+                        dependency on the local regulated entity.
+                    </p>
+
+                </div>
+
+
+                <div class="mitigation">
+
+                    <span>
+                        MITIGATION
+                    </span>
+
+                    <p>
+                        Define responsibilities, monitoring,
+                        escalation and audit requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LAUNCH GATES
+    ========================== -->
+
+    <section class="gates-overview">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                LAUNCH GATES
+            </p>
+
+            <h2>
+                Entry should not proceed blindly.
+            </h2>
+
+        </div>
+
+
+        <div class="gate-overview-grid">
+
+            <div>
+                <span>01</span>
+                <strong>Product classification</strong>
+            </div>
+
+            <div>
+                <span>02</span>
+                <strong>Authorization pathway</strong>
+            </div>
+
+            <div>
+                <span>03</span>
+                <strong>KYC / AML</strong>
+            </div>
+
+            <div>
+                <span>04</span>
+                <strong>Payment & settlement</strong>
+            </div>
+
+            <div>
+                <span>05</span>
+                <strong>Risk controls</strong>
             </div>
 
         </div>
 
-    </nav>
+    </section>
 
-    <h1>Risks & Mitigations</h1>
-    <p>This is the Risks & Mitigations page.</p>
 
-</body>
-</html>
+</main>
+
+{% endblock %}

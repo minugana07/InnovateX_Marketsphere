@@ -1,55 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <title>Market Assessment | MochaTrade</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block title %}
+Market Assessment | InnovateX
+{% endblock %}
 
-<body>
 
-    <nav class="navbar">
+{% block content %}
 
-        <div class="nav-container">
+<main class="page-container">
 
-            <a href="/" class="logo">
-                INNOVATEX
-            </a>
 
-            <div class="nav-links">
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
 
-                <a href="/" class="nav-link">
-                    Home
-                </a>
+    <section class="page-header">
 
-                <a href="/assessment" class="nav-link">
-                    Market Assessment
-                </a>
+        <p class="section-label">
+            MARKET ASSESSMENT
+        </p>
 
-                <a href="/comparison" class="nav-link">
-                    Compare Markets
-                </a>
+        <h1>
+            Evaluate a candidate market.
+        </h1>
 
-                <a href="/strategy" class="nav-link">
-                    Entry Strategy
-                </a>
+        <p>
+            Select a market to assess its regulatory
+            complexity, launch readiness, and entry requirements.
+        </p>
 
-                <a href="/risks" class="nav-link">
-                    Risks & Mitigations
-                </a>
+    </section>
 
+
+    <!-- =========================
+         MARKET SELECTOR
+    ========================== -->
+
+    <section class="assessment-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <p class="section-label">
+                    STEP 01
+                </p>
+
+                <h2>
+                    Select a market
+                </h2>
+
+            </div>
+
+
+            <div class="step-indicator">
+                <span>01</span> / 03
             </div>
 
         </div>
 
-    </nav>
 
-    <h1>Market Assessment</h1>
-    <p>This is the Market Assessment page.</p>
+        <div class="market-selection">
 
-</body>
-</html>
+            <label for="market">
+                Candidate market
+            </label>
+
+
+            <select id="market">
+
+                <option value=""
+                        selected
+                        disabled>
+                    Choose a market
+                </option>
+
+                <option value="brazil">
+                    Brazil
+                </option>
+
+                <option value="uae">
+                    United Arab Emirates
+                </option>
+
+                <option value="south_africa">
+                    South Africa
+                </option>
+
+                <option value="singapore">
+                    Singapore
+                </option>
+
+                <option value="australia">
+                    Australia
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button id="assess-button"
+                class="assess-button">
+
+            Assess Market
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+    </section>
+
+
+    <!-- RESULT WILL BE INSERTED HERE BY JS -->
+
+</main>
+
+{% endblock %}

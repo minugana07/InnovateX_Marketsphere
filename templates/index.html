@@ -1,144 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>InnovateX | Market Entry Readiness</title>
+{% block title %}
+InnovateX | Market Entry Readiness
+{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
 
-<body>
+{% block content %}
 
-    <nav class="navbar">
+<main>
 
-        <div class="nav-container">
 
-            <a href="/" class="logo">
-                INNOVATEX
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="section-label">
+                REGULATORY INTELLIGENCE
+            </p>
+
+
+            <h1>
+                Market Entry
+                <span>Readiness</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Evaluate regulatory complexity, identify
+                market-specific requirements, and determine
+                what it takes to enter a new market.
+            </p>
+
+
+            <a href="/assessment"
+               class="primary-button">
+
+                Start Assessment
+
+                <span>→</span>
+
             </a>
 
-            <div class="nav-links">
+        </div>
 
-                <a href="/" class="nav-link active">
-                    Home
-                </a>
 
-                <a href="/assessment" class="nav-link">
-                    Market Assessment
-                </a>
+        <div class="hero-visual">
 
-                <a href="/comparison" class="nav-link">
-                    Compare Markets
-                </a>
+            <div class="hero-card">
 
-                <a href="/strategy" class="nav-link">
-                    Entry Strategy
-                </a>
+                <p class="section-label">
+                    DECISION ENGINE
+                </p>
 
-                <a href="/risks" class="nav-link">
-                    Risks & Mitigations
-                </a>
+
+                <div class="hero-score">
+
+                    <span>
+                        06
+                    </span>
+
+                    <small>
+                        REGULATORY<br>
+                        DIMENSIONS
+                    </small>
+
+                </div>
+
+
+                <div class="hero-line"></div>
+
+
+                <p class="hero-card-description">
+                    Product · Licensing · KYC/AML ·
+                    FX · Payments · Reporting
+                </p>
 
             </div>
 
         </div>
 
-    </nav>
+    </section>
 
 
-    <main class="main-container">
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
 
-        <section class="hero">
+    <section class="how-section">
 
-            <p class="eyebrow">REGULATORY INTELLIGENCE</p>
+        <div class="section-heading">
 
-            <h1>
-                Market Entry<br>
-                <span>Readiness</span>
-            </h1>
-
-            <p class="hero-description">
-                Assess a market's regulatory complexity, identify entry
-                requirements, and understand what MochaTrade needs before launch.
+            <p class="section-label">
+                HOW IT WORKS
             </p>
 
-        </section>
+            <h2>
+                From regulatory complexity
+                to an entry decision.
+            </h2>
+
+        </div>
 
 
-        <section class="assessment-card">
-
-            <div class="card-header">
-                <div>
-                    <p class="section-label">MARKET ASSESSMENT</p>
-                    <h2>Select a market</h2>
-                </div>
-
-                <div class="step-indicator">
-                    <span>01</span> / 03
-                </div>
-            </div>
+        <div class="process-grid">
 
 
-            <div class="market-selection">
+            <div class="process-card">
 
-                <label for="market">Candidate market</label>
+                <span class="process-number">
+                    01
+                </span>
 
-                <select id="market">
-                    <option value="" selected disabled>
-                        Choose a market
-                    </option>
+                <h3>
+                    Assess
+                </h3>
 
-                    <option value="brazil">Brazil</option>
-                    <option value="uae">United Arab Emirates</option>
-                    <option value="south-africa">South Africa</option>
-                    <option value="singapore">Singapore</option>
-                    <option value="australia">Australia</option>
-                </select>
+                <p>
+                    Evaluate a candidate market across
+                    six regulatory dimensions using a
+                    structured scoring framework.
+                </p>
 
             </div>
 
 
-            <button id="assess-button" class="assess-button">
-                Assess Market
-                <span>→</span>
-            </button>
+            <div class="process-card">
 
-        </section>
+                <span class="process-number">
+                    02
+                </span>
 
+                <h3>
+                    Compare
+                </h3>
 
-        <section class="info-strip">
+                <p>
+                    Compare candidate markets and
+                    identify where regulatory complexity
+                    differs.
+                </p>
 
-            <div class="info-item">
-                <span class="info-number">06</span>
-                <span class="info-text">Regulatory<br>dimensions</span>
             </div>
 
-            <div class="info-item">
-                <span class="info-number">05</span>
-                <span class="info-text">Candidate<br>markets</span>
+
+            <div class="process-card">
+
+                <span class="process-number">
+                    03
+                </span>
+
+                <h3>
+                    Decide
+                </h3>
+
+                <p>
+                    Translate the assessment into an
+                    entry approach, launch requirements,
+                    risks, and mitigations.
+                </p>
+
             </div>
 
-            <div class="info-item">
-                <span class="info-number">01</span>
-                <span class="info-text">Entry<br>decision</span>
-            </div>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
 
 
-    <footer>
-        <p>MochaTrade Market Entry Intelligence</p>
-        <p>Prototype • Regulatory assessment framework</p>
-    </footer>
+    <!-- =========================
+         KEY FEATURES
+    ========================== -->
+
+    <section class="stats-section">
+
+        <div class="stat">
+
+            <strong>
+                05
+            </strong>
+
+            <span>
+                Candidate Markets
+            </span>
+
+        </div>
 
 
-    <script src=" {{ url_for('static', filename='script.js') }}"></script>
+        <div class="stat">
 
-</body>
+            <strong>
+                06
+            </strong>
 
-</html>
+            <span>
+                Regulatory Dimensions
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                05
+            </strong>
+
+            <span>
+                Launch Gates
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                01
+            </strong>
+
+            <span>
+                Decision Engine
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section class="home-cta">
+
+        <p class="section-label">
+            READY TO EXPLORE?
+        </p>
+
+        <h2>
+            Start with a market.
+            End with a strategy.
+        </h2>
+
+        <a href="/assessment"
+           class="primary-button">
+
+            Begin Assessment
+
+            <span>→</span>
+
+        </a>
+
+    </section>
+
+
+</main>
+
+{% endblock %}
