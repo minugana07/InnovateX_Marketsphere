@@ -17,45 +17,73 @@ body {
 ========================= */
 
 .navbar {
-    height: 76px;
-    padding: 0 7%;
+    width: 100%;
+    background: #171717;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 22px 40px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    background: #171717;
-    color: white;
+    gap: 40px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    color: white;
+    text-decoration: none;
 
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
 }
 
-.logo-mark {
-    width: 34px;
-    height: 34px;
-
+.nav-links {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 30px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: #bdbdbd;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+
+    height: 2px;
 
     background: #c89b5c;
-    color: #171717;
-
-    font-weight: 800;
-    border-radius: 6px;
-}
-
-.nav-label {
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #bdbdbd;
 }
 
 
@@ -539,5 +567,36 @@ footer {
 
     .gate-status {
         margin-left: 43px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        padding: 20px 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px 20px;
     }
 }
