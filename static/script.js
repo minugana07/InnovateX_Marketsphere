@@ -12,5 +12,3 @@ assessButton.addEventListener("click", function () {
 
     alert("Assessment for " + marketSelect.options[marketSelect.selectedIndex].text + " will begin.");
 });
-
-console.log("JavaScript is connected!");
