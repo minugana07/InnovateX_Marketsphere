@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MochaTrade | Market Entry Readiness</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-mark">M</span>
+            <span>MochaTrade</span>
+        </div>
+
+        <div class="nav-label">
+            Market Entry Readiness
+        </div>
+    </header>
+
+
+    <main class="main-container">
+
+        <section class="hero">
+
+            <p class="eyebrow">REGULATORY INTELLIGENCE</p>
+
+            <h1>
+                Market Entry<br>
+                <span>Readiness</span>
+            </h1>
+
+            <p class="hero-description">
+                Assess a market's regulatory complexity, identify entry
+                requirements, and understand what MochaTrade needs before launch.
+            </p>
+
+        </section>
+
+
+        <section class="assessment-card">
+
+            <div class="card-header">
+                <div>
+                    <p class="section-label">MARKET ASSESSMENT</p>
+                    <h2>Select a market</h2>
+                </div>
+
+                <div class="step-indicator">
+                    <span>01</span> / 03
+                </div>
+            </div>
+
+
+            <div class="market-selection">
+
+                <label for="market">Candidate market</label>
+
+                <select id="market">
+                    <option value="" selected disabled>
+                        Choose a market
+                    </option>
+
+                    <option value="brazil">Brazil</option>
+                    <option value="uae">United Arab Emirates</option>
+                    <option value="south-africa">South Africa</option>
+                    <option value="singapore">Singapore</option>
+                    <option value="australia">Australia</option>
+                </select>
+
+            </div>
+
+
+            <button id="assess-button" class="assess-button">
+                Assess Market
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <section class="info-strip">
+
+            <div class="info-item">
+                <span class="info-number">06</span>
+                <span class="info-text">Regulatory<br>dimensions</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-number">05</span>
+                <span class="info-text">Candidate<br>markets</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-number">01</span>
+                <span class="info-text">Entry<br>decision</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>MochaTrade Market Entry Intelligence</p>
+        <p>Prototype • Regulatory assessment framework</p>
+    </footer>
+
+
+    <script src=" {{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
